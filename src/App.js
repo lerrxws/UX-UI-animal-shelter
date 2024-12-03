@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Landing from './pages/Landing';
+import LostFound from './pages/LostFound';
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Footer></Footer>
+      {/* <Landing></Landing> */}
+      <LostFound></LostFound>
     </div>
   );
 }

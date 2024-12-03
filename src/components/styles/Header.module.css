@@ -45,11 +45,13 @@
 
 .header {
     height: var(--header-height);
-    background: transparent;
+    background: var(--white);
     color: var(--dark_purple);
-    position: fixed;
+    /* position: fixed; */
+    position: sticky;
     z-index: 1000;
     width: 100%;
+    top:0;
 }
 
 .header__content {
@@ -138,14 +140,18 @@
     position: fixed;
     top: var(--header-height);
     right: -100%;
-    background: transparent;
+    background: var(--white);
     text-align: center;
     padding: var(--spacing-md) 0;
     transition: 0.2s ease right;
 }
 
 .nav--open {
+    /* position: relative; */
+    position: absolute;
+    height: fit-content;
     right: 0;
+    top: var(--header-height);
 }
 
 .nav__item {
@@ -192,7 +198,7 @@
 .button {
     font-weight: 500;
     color: var(--dark_purple);
-    border: 2px solid var(--dark_purple);
+    border: 1px solid var(--dark_purple);
     padding: var(--spacing-sm) var(--spacing-lg);
     border-radius: calc(var(--spacing-sm) / 2);
     cursor: pointer;
