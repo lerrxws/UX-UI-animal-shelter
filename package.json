@@ -5,11 +5,13 @@
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
+    "@mui/icons-material": "^6.1.10",
     "@mui/material": "^6.1.9",
     "@spectrum-icons/workflow": "^4.2.16",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "lucide-react": "^0.465.0",
     "react": "^18.3.1",
     "react-aria-components": "^1.5.0",
     "react-dom": "^18.3.1",

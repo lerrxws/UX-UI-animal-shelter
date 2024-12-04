@@ -1,0 +1,102 @@
+/* Filter.module.css */
+.filter{
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+    /* border-color: #868686; */
+    border: 1px solid #868686;
+    border-radius: 8px;
+    /* border-radius: 10px; */
+}
+.filterContainer {
+  width: 100%;
+  background-color: white;
+  height: fit-content;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+  border-radius: 8px;
+  /* padding: 24px; */
+  /* margin-bottom: 32px; */
+  
+}
+
+.filterHeader {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* margin-bottom: 16px; */
+  margin: 16px;
+}
+
+.filterRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cbcbcb;
+  /* padding-bottom: 8px; */
+  /* margin-bottom: 16px; */
+  margin: 16px;
+}
+
+.filterTitle {
+  color: #675bc8;
+  font-weight: bold;
+}
+
+.resetButton {
+  background: none;
+  border: none;
+  color: #868686;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.filterSection {
+  /* margin-bottom: 16px; */
+  margin: 16px;
+}
+
+.filterToggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.filterToggle p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.filterButton {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.filterButton:hover {
+  background-color: #675bc840;
+  color: #675bc8;
+}
+
+.filterButton.active {
+  background-color: #675bc8;
+  color: white;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

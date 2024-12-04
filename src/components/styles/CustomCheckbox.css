@@ -1,0 +1,17 @@
+.custom-checkbox-icon {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #202020;
+    border-radius: 4px;
+  }
+  
+  .custom-checkbox-checked-icon {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #675BC8;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
