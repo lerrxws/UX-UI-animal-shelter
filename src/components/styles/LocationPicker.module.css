@@ -16,14 +16,30 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    width: 100%;
+
+  }
+
+  @media (max-width: 880px) {
+    .container {
+      padding: 0;
+    }
   }
   
   /* ComboBox styles */
   .reactAriaComboBox {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 0.5rem;
     width: var(--trigger-width);
+    align-items: center;
+  }
+
+  @media (max-width: 880px) {
+    .reactAriaComboBox {
+      width: 100%;
+    }
   }
   
   /* Label styles */
@@ -31,6 +47,7 @@
     font-size: 1rem;
     color: var(--text-color);
     margin-bottom: 0.5rem;
+    width: fit-content;
   }
   
   /* Wrapper for input and button */
@@ -38,6 +55,18 @@
     display: flex;
     align-items: center;
     position: relative;
+  }
+
+  @media (max-width: 940px) {
+    .inputWrapper {
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 880px) {
+    .inputWrapper {
+      width: 100%;
+    }
   }
   
   /* Input styles */
@@ -111,4 +140,5 @@
     background: var(--highlight-background);
     color: var(--highlight-foreground);
   }
+  
   

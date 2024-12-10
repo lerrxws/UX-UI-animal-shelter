@@ -8,6 +8,8 @@ import image from "../assets/question.png"
 import Filter from "../components/Filter";
 import FilterLost from "../components/FilterLost";
 import Pagination from "../components/Pagination";
+import Card from '../components/Card';
+import { pets } from "../constants/index";
 
 const Lost = () => {
     const [filters, setFilters] = useState({
@@ -22,10 +24,10 @@ const Lost = () => {
             <hr class="solid"></hr>
             <div className={styles.lost__container}>
                 <div className={styles.info_banner}>
-                    Lost a Pet? Let Us Help You Find Them!
+                    <p style={{marginTop: "20px", marginBottom: "20px"}}>Lost a Pet? Let Us Help You Find Them!</p>
                     <hr class="solid"></hr>
                     <div className={styles.how_works}>
-                        How Does the Lost Section Work?
+                        <p style={{marginTop: "20px"}}>How Does the Lost Section Work?</p>
                         <div className={styles.info_list}>
                             <div className={styles.step}>
                                 <div></div>
@@ -61,26 +63,85 @@ const Lost = () => {
                     <FilterLost filters={filters} setFilters={setFilters}></FilterLost>
                     </div>
                     <div className={styles.pets}>
-                        <div className={styles.pet_row}>
-                            <div className={styles.pet}></div>
-                            <div className={styles.pet}></div>
-                            <div className={styles.pet}></div>
+                        <div className={styles.pet_container}>
+                        {pets.map((pet) => (
+                            <Card img="https://via.placeholder.com/150"
+                                key={pet.id}
+                                name={pet.name}
+                                gender={pet.gender}
+                                age="3 years">
+                            </Card>
+                        ))}
+                        </div>  
+                        
+                        {/* <div className={styles.pet_row}>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
                         </div>
                         <div className={styles.pet_row}>
-                            <div className={styles.pet}></div>
-                            <div className={styles.pet}></div>
-                            <div className={styles.pet}></div>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
                         </div>
                         <div className={styles.pet_row}>
-                            <div className={styles.pet}></div>
-                            <div className={styles.pet}></div>
-                            <div className={styles.pet}></div>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
                         </div>
                         <div className={styles.pet_row}>
-                            <div className={styles.pet}></div>
-                            <div className={styles.pet}></div>
-                            <div className={styles.pet}></div>
-                        </div>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
+                            <Card img="https://via.placeholder.com/150"
+                                name="Max"
+                                gender="Male"
+                                age="3 years">
+                            </Card>
+                        </div> */}
                         {/* <div className={styles.pages}> */}
                         <div>
                             <Pagination></Pagination>

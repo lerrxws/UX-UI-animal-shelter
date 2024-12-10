@@ -7,7 +7,7 @@ const LocationPicker = () => {
   return (
     <div className={styles.container}>
       <ComboBox className={styles.reactAriaComboBox}>
-        <Label className={styles.label}>Loaction</Label>
+        <Label className={styles.label}>Location</Label>
         <div className={styles.inputWrapper}>
           <Input className={styles.reactAriaInput} />
           <Button className={styles.reactAriaButton}>▼</Button>

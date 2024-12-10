@@ -16,7 +16,35 @@
   border-radius: 8px;
   /* padding: 24px; */
   /* margin-bottom: 32px; */
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
   
+}
+.filterContainerClosed {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  padding: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 880px) {
+  .filterContainer {
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    padding-right: 16px;
+    padding-left: 16px;
+    
+    /* justify-content: space-between; */
+  }
+
+  .filter{
+    width: 100%;
+    padding:0px;
+  }
 }
 
 .filterHeader {
@@ -24,7 +52,6 @@
   font-size: 1.5rem;
   font-weight: 600;
   /* margin-bottom: 16px; */
-  margin: 16px;
 }
 
 .filterRow {
@@ -35,6 +62,17 @@
   /* padding-bottom: 8px; */
   /* margin-bottom: 16px; */
   margin: 16px;
+  width: 100%;
+}
+
+@media (max-width: 880px) {
+  .filterRow {
+    margin: 0;
+  }
+
+
+  
+
 }
 
 .filterTitle {
@@ -55,6 +93,13 @@
   margin: 16px;
 }
 
+
+@media (max-width: 880px) {
+  .filterSection {
+    width:100%;
+    margin: 0;
+  }
+}
 .filterToggle {
   display: flex;
   justify-content: space-between;
@@ -74,6 +119,13 @@
   flex-direction: column;
   gap: 8px;
   padding-top: 8px;
+}
+
+@media (max-width: 880px) {
+  /* .filterOptions {
+    position: absolute;
+    width:100%
+  } */
 }
 
 .filterButton {
@@ -100,3 +152,9 @@
   align-items: center;
   gap: 8px;
 }
+
+.report_text_image{
+
+}
+
+
