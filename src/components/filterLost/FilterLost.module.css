@@ -146,6 +146,10 @@
   background-color: white;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .filterButton:hover {

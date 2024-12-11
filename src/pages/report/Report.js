@@ -1,5 +1,4 @@
-
-import Breadcrumb from "../../components/bacicBreadcrumb/BasicBreadcrumbs";
+import Breadcrumb from "../../components/basicBreadcrumbs/BasicBreadcrumbs";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { useRef, useState, useEffect } from "react";
@@ -8,6 +7,7 @@ import Date from './report_pages/date/Date';
 import Description from './report_pages/description/Description';
 import Location from "./report_pages/location/Location";
 import Success from "./report_pages/success/Success";
+import { useNavigate } from 'react-router-dom';
 
 import { useMediaQuery, useTheme } from '@mui/material';
 import Stepper from '@mui/material/Stepper';
@@ -54,13 +54,19 @@ function Report() {
         setActiveStep(0);
     };
 
+    const navigate = useNavigate();
+
+    const handleNavigation = (path) => {
+        navigate(path);
+    };
+
     const steps = [
         {
             label: 'Date',
             content: (
                 <Date
                     isLoaded={isLoaded}
-                    handleBack={handleBack}
+                    handleBack={() => handleNavigation('/lost')}
                     handleNext={handleNext}
                 />
               ),
@@ -94,16 +100,23 @@ function Report() {
                 <Success
                     isLoaded={isLoaded}
                     handleBack={handleBack}
-                    handleNext={handleNext}
+                    handleNext={() => handleNavigation('/lost')}
                 />
               ),
         },
     ];
 
+    const pages = [
+        { label: 'Home', url: '/' },
+        { label: 'Lost & Found', url: '/lost&found' },
+        {label: 'Lost', url: '/lost'},
+        { label: 'Report', url: '/report' },
+      ];
+
     return (
         <div className={styles.report}>
             <Header />
-            <Breadcrumb />
+            <Breadcrumb pages={pages}/>
             <div className={styles.main}>
                 <Stepper 
                     activeStep={activeStep} 

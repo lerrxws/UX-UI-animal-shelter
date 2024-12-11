@@ -22,6 +22,7 @@ const Location = (props) => {
                         <Button 
                             onClick={props.handleNext}
                             disabled={!props.isLoaded}
+                            variant="secondary"
                         >
                             Continue
                         </Button>

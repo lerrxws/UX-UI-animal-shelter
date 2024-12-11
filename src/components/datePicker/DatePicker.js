@@ -1,15 +1,33 @@
-import React from 'react';
-import { 
-  Button, Calendar, CalendarCell, CalendarGrid, DateInput, DatePicker, DateSegment, Dialog, Group, Heading, Label, Popover 
-} from 'react-aria-components';
-import { I18nProvider } from '@react-aria/i18n'; // Import I18nProvider for setting locale
-import styles from './DatePicker.module.css'; // Import your custom CSS module
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import React from "react";
+import {
+  Button,
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  DateInput,
+  DatePicker,
+  DateSegment,
+  Dialog,
+  Group,
+  Heading,
+  Label,
+  Popover,
+} from "react-aria-components";
+import { I18nProvider } from "@react-aria/i18n"; // Import I18nProvider for setting locale
+import styles from "./DatePicker.module.css"; // Import your custom CSS module
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 
-const DatePickerComponent = () => {
+const DatePickerComponent = ({ onChange }) => {
   return (
     <I18nProvider locale="en-US"> {/* Set locale explicitly to English */}
-      <DatePicker className={styles.datePicker}>
+      <DatePicker
+        className={styles.datePicker}
+        onChange={(selectedDate) => {
+          if (onChange) {
+            onChange(selectedDate); // Notify parent of date change
+          }
+        }}
+      >
         <Label className={styles.label}>Date</Label>
         <Group className={styles.inputGroup}>
           <DateInput className={styles.dateInput} placeholder="Date">

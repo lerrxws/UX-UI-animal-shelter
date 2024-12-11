@@ -22,9 +22,10 @@ const Success = (props) => {
                         </Button>
                         <Button 
                             onClick={props.handleNext}
-                            disabled={1}
+                            variant="secondary"
+                            // disabled={1}
                         >
-                            Continue
+                            Finish
                         </Button>
                     </div>
                 </div>

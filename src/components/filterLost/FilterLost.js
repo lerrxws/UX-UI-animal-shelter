@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp, Cat, Dog } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMars, faVenus } from "@fortawesome/free-solid-svg-icons"
+import { faMars, faVenus } from "@fortawesome/free-solid-svg-icons";
 import styles from "./FilterLost.module.css";
 import LocationPicker from "../locationPicker/LocationPicker.js";
 import DatePickerComponent from "../datePicker/DatePicker.js";
@@ -32,30 +32,47 @@ const FilterLost = ({ filters, setFilters }) => {
             <button
               className={styles.resetButton}
               onClick={() =>
-                setFilters({ petType: "all", petAge: [], gender: "all" })
+                setFilters({
+                  petType: "all",
+                  petAge: [],
+                  gender: "all",
+                  location: "",
+                  lostDate: null,
+                })
               }
             >
               Reset Filters
             </button>
           </div>
+          {/* Date Picker */}
           <div style={{ width: "100%" }}>
-            <DatePickerComponent />
+            <DatePickerComponent
+              onChange={(selectedDate) => {
+                console.log("Selected date:", selectedDate); // Debugging
+                setFilters((prevFilters) => ({
+                  ...prevFilters,
+                  lostDate: selectedDate,
+                }));
+              }}
+            />
           </div>
+          {/* Location Picker */}
           <div style={{ width: "100%", marginTop: "10px", marginBottom: "10px" }}>
-            <LocationPicker />
+            <LocationPicker
+              onChange={(location) => {
+                console.log("Selected location:", location); // Debugging
+                setFilters((prevFilters) => ({ ...prevFilters, location }));
+              }}
+            />
           </div>
           {/* Pet Type */}
-          <div className={styles.filterSection} >
+          <div className={styles.filterSection}>
             <div
               className={styles.filterToggle}
               onClick={() => setIsPetTypeOpen(!isPetTypeOpen)}
             >
               <p>Pet Type</p>
-              {isPetTypeOpen ? (
-                <ChevronUp size={20} />
-              ) : (
-                <ChevronDown size={20} />
-              )}
+              {isPetTypeOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
             </div>
             {isPetTypeOpen && (
               <div className={styles.filterOptions}>
@@ -93,11 +110,7 @@ const FilterLost = ({ filters, setFilters }) => {
               onClick={() => setIsGenderOpen(!isGenderOpen)}
             >
               <p>Gender</p>
-              {isGenderOpen ? (
-                <ChevronUp size={20} />
-              ) : (
-                <ChevronDown size={20} />
-              )}
+              {isGenderOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
             </div>
             {isGenderOpen && (
               <div className={styles.filterOptions}>
@@ -172,29 +185,45 @@ const FilterLost = ({ filters, setFilters }) => {
                 <button
                   className={styles.resetButton}
                   onClick={() =>
-                    setFilters({ petType: "all", petAge: [], gender: "all" })
+                    setFilters({
+                      petType: "all",
+                      petAge: [],
+                      gender: "all",
+                      location: "",
+                      lostDate: null,
+                    })
                   }
                 >
                   Reset Filters
                 </button>
               </div>
+              {/* Date Picker */}
               <div style={{ width: "100%" }}>
-                <DatePickerComponent />
+                <DatePickerComponent
+                  onChange={(selectedDate) =>
+                    setFilters((prevFilters) => ({
+                      ...prevFilters,
+                      lostDate: selectedDate,
+                    }))
+                  }
+                />
               </div>
+              {/* Location Picker */}
               <div style={{ width: "100%" }}>
-                <LocationPicker />
+                <LocationPicker
+                  onChange={(location) =>
+                    setFilters((prevFilters) => ({ ...prevFilters, location }))
+                  }
+                />
               </div>
+              {/* Pet Type */}
               <div className={styles.filterSection}>
                 <div
                   className={styles.filterToggle}
                   onClick={() => setIsPetTypeOpen(!isPetTypeOpen)}
                 >
                   <p>Pet Type</p>
-                  {isPetTypeOpen ? (
-                    <ChevronUp size={20} />
-                  ) : (
-                    <ChevronDown size={20} />
-                  )}
+                  {isPetTypeOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                 </div>
                 {isPetTypeOpen && (
                   <div className={styles.filterOptions}>
@@ -231,17 +260,14 @@ const FilterLost = ({ filters, setFilters }) => {
                   </div>
                 )}
               </div>
+              {/* Gender */}
               <div className={styles.filterSection}>
                 <div
                   className={styles.filterToggle}
                   onClick={() => setIsGenderOpen(!isGenderOpen)}
                 >
                   <p>Gender</p>
-                  {isGenderOpen ? (
-                    <ChevronUp size={20} />
-                  ) : (
-                    <ChevronDown size={20} />
-                  )}
+                  {isGenderOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                 </div>
                 {isGenderOpen && (
                   <div className={styles.filterOptions}>

@@ -1,8 +1,9 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import styles from "./styles/Landing.module.css";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import styles from "./Landing.module.css";
+import Button from "../../components/button/Button";
 
-import image from "../assets/landing_page.png"
+import image from "../../assets/landing_page.png"
 
 const Landing = () => {
     return (
@@ -25,15 +26,5 @@ const Landing = () => {
     );
 };
 
-const Button = ({ startIcon: StartIcon, children, variant }) => {
-    return (
-        <button
-            className={`${styles.button} ${variant === "secondary" ? styles.button_secondary: ""}`}
-        >
-            {StartIcon && <StartIcon className={styles.icon} />}
-            {children}
-        </button>
-    );
-};
 
 export default Landing;

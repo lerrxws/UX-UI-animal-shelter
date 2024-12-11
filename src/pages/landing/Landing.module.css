@@ -53,75 +53,88 @@
     --font-ultra-bold: 900;
 }
 
-.lost_found {
+.landing {
     height: 100%;
     background: transparent;
     position: relative;
-    color: var(--base_purple);
+    color: var(--dark_purple);
     /* position: fixed; */ 
     /* z-index: 1000; */
     width: 100%;
 }
 
-.lost_found__container {
-    font-size: 96px;
+.landing__container {
+    /* max-width: 1920px; */
+    /* width: 100vw; */
     margin: 0 auto;
     padding: 0 var(--spacing-md);
     transition: 0.3s ease padding;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-left: 32px;
     margin-right: 32px;
     flex:1;
     position: relative;
-    height: 80%;
-    font-weight: var(--font-bold);
+    height: 100%;
 }
 
-.main_content{
-    flex: 0 0 70%;
-    padding: 1em;
-}
-
-.button{
-    width: 160px;
-    height: 48px;
-    font-weight: var(--font-medium);
+.text_button__container {
+    display: flex;
+    flex-direction: column;
     color: var(--base_purple);
-    border: 1px solid var(--base_purple);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: calc(var(--spacing-sm) / 2);
-    cursor: pointer;
-    background-color: transparent;
-    align-items: center; 
-    margin: 0 var(--spacing-sm);
+    font-size: 96px;
+    font-weight: var(--font-semi-bold);
+    text-align: center;
+    width: 100%;
+    max-width: 560px;
 }
 
-.button_secondary {
-    color: var(--white);
-    border: 1px solid var(--base_purple);
-    background-color: var(--base_purple);
+.button__container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--spacing-lg);
+    flex-wrap: wrap;
+    font-size: 16px;
+    gap: 16px;
+    /* justify-content: space-between; */
 }
 
-.button:active {
-    transform: scale(0.98);
-    border-radius: 0;
+.image__container {
+    /* display: block; */
+    /* width: 100%; */
+    /* height: auto; */
+    z-index: -1;
+    position: absolute;
+    right: 30px;
 }
 
-.button:hover {
-    transform: scale(0.98);
-    color: var(--base_purple);
-    border: 2px solid  var(--base_purple)
+.icon {
+    margin-right: 8px;
 }
 
-.button_secondary:hover {
-    color: var(--white);
-    border-color: var(--base_purple);
-    background-color: var(--lite_purple);
+.image{
+    width: 100%;
+    height: auto;
 }
 
-.button_secondary:active {
-    transform: scale(0.98);
-    border-radius: 0;
+.text__container {
+
 }
+
+@media (max-width: 768px) {
+    .text_button__container {
+        font-size: 48px;
+        background-color: #ffffff40;
+        padding-bottom: 10px;
+    }
+
+    .image__container{
+
+        position: absolute;
+    }
+}
+
+

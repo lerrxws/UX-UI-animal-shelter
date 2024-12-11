@@ -2,8 +2,10 @@ import './App.css';
 import React, { useState } from 'react';
 import Report from './pages/report/Report';
 import './index.css';
-import Lost from './pages/Lost'
-import Header from './components/header/Header';
+import Lost from './pages/lost/Lost'
+import Landing from './pages/landing/Landing'
+import LostFound from './pages/lostfound/LostFound'
+import { Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -19,12 +21,12 @@ function App() {
   ];
   return (
     <div className="App">
-      {/* <Landing></Landing> */}
-      {/* <LostFound></LostFound> */}
-      {/* <Header></Header> */}
-      <Lost></Lost> 
-      {/* <Report></Report> */}
-      {/* <ResponsiveStepper></ResponsiveStepper> */}
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/lost&found" element={<LostFound />} />
+        <Route path="/lost" element={<Lost />} />
+        <Route path="/report" element={<Report />} />
+      </Routes>
     </div>
   );
 }

@@ -15,13 +15,14 @@ const Date = (props) => {
                     <div className={report.button_container}>
                         <Button 
                             onClick={props.handleBack}
-                            disabled={1}
+                            // disabled={1}
                         >
                             Back
                         </Button>
                         <Button 
                             onClick={props.handleNext}
                             disabled={!props.isLoaded}
+                            variant="secondary"
                         >
                             Continue
                         </Button>
