@@ -1,21 +1,10 @@
 import './App.css';
-import Landing from './pages/Landing';
-import LostFound from './pages/LostFound';
-import Lost from './pages/Lost';
-import LocationPicker from './components/LocationPicker';
-import CustomCheckbox from './components/CustomCheckbox';
-import Filter from './components/Filter';
 import React, { useState } from 'react';
-import Date from './pages/Lost/Date';
-import Form from './components/DragDrop';
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"
-import Description from './pages/Lost/Description';
-import ImageCarousel from './components/ImageCarousel';
-import Dropdown from './components/Dropdown';
-import DragDrop from './components/DragDrop';
-import Card from './components/Card';
-import Report from './pages/Report';
+import Report from './pages/report/Report';
+import './index.css';
+import Lost from './pages/Lost'
+import Header from './components/header/Header';
+
 
 function App() {
   const [filters, setFilters] = useState({
@@ -32,8 +21,10 @@ function App() {
     <div className="App">
       {/* <Landing></Landing> */}
       {/* <LostFound></LostFound> */}
-      {/* <Lost></Lost>  */}
-      <Report></Report>
+      {/* <Header></Header> */}
+      <Lost></Lost> 
+      {/* <Report></Report> */}
+      {/* <ResponsiveStepper></ResponsiveStepper> */}
     </div>
   );
 }
