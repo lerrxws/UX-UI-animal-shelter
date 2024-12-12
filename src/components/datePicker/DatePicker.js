@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Calendar,
@@ -13,26 +13,44 @@ import {
   Label,
   Popover,
 } from "react-aria-components";
-import { I18nProvider } from "@react-aria/i18n"; // Import I18nProvider for setting locale
-import styles from "./DatePicker.module.css"; // Import your custom CSS module
+import { I18nProvider } from "@react-aria/i18n";
+import styles from "./DatePicker.module.css";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 
-const DatePickerComponent = ({ onChange }) => {
+const DatePickerComponent = (props) => {
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  useEffect(() => {
+    setSelectedDate(null);
+  }, [props.resetKey]);
+
   return (
-    <I18nProvider locale="en-US"> {/* Set locale explicitly to English */}
+    <I18nProvider locale="en-US">
       <DatePicker
-        className={styles.datePicker}
-        onChange={(selectedDate) => {
-          if (onChange) {
-            onChange(selectedDate); // Notify parent of date change
+        className={`${styles.datePicker} ${
+          selectedDate ? styles.hasText : styles.noText
+        }`}
+        value={selectedDate}
+        onChange={(date) => {
+          setSelectedDate(date);
+          if (props.onChange) {
+            props.onChange(date);
           }
         }}
       >
-        <Label className={styles.label}>Date</Label>
+        <Label className={styles.label}>{props.label}</Label>
         <Group className={styles.inputGroup}>
-          <DateInput className={styles.dateInput} placeholder="Date">
+        <DateInput
+            className={`${styles.dateInput}`}
+            placeholder="Date"
+          >
             {(segment) => (
-              <DateSegment segment={segment} className={styles.dateSegment} />
+              <DateSegment
+                segment={segment}
+                className={`${styles.dateSegment} ${
+                  selectedDate ? styles.hasText : styles.noText
+                }`}
+              />
             )}
           </DateInput>
           <Button className={styles.dropdownButton} aria-label="Open calendar">

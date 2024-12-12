@@ -10,11 +10,14 @@ import Card from "../../components/card/Card";
 import Button from "../../components/button/Button";
 import { pets } from "../../constants/index";
 import { useNavigate } from 'react-router-dom';
+import question from "../../assets/question-dark.png"
+import report from "../../assets/report.png"
+import reunite from "../../assets/reunite.png"
+import arrow from "../../assets/next-step.png"
 
 const Lost = () => {
   const [filters, setFilters] = useState({
     petType: "all",
-    // petAge: [],
     gender: "all",
     lostDate: null,
     location: ""
@@ -25,36 +28,22 @@ const Lost = () => {
   const rowsPerPage = 4;
   const itemsPerPage = rowsPerPage * cardsPerRow;
 
-  // Filtering logic
   const filteredPets = pets.filter((pet) => {
-    // Pet Type Filter
+
     const typeMatch = filters.petType === 'all' || 
       pet.petType.toLowerCase() === filters.petType.toLowerCase();
 
-    // Age Filter
-    // const ageMatch = filters.petAge.length === 0 || 
-    //   filters.petAge.some(ageRange => {
-    //     const [minAge, maxAge] = ageRange.split('-').map(Number);
-    //     const petAge = parseInt(pet.age);
-    //     return petAge >= minAge && petAge <= maxAge;
-    //   });
-
-    // Gender Filter
     const genderMatch = !filters.gender || 
     filters.gender.toLowerCase() === 'all' || 
     pet.gender.toLowerCase() === filters.gender.toLowerCase();
 
-    // Lost Date Filter
     const dateMatch = !filters.lostDate || 
       (new Date(pet.lostDate) >= new Date(filters.lostDate));
 
-    // Location Filter (case-insensitive, partial match)
     const locationMatch = !filters.location || 
     (pet.location?.toLowerCase().trim().includes(filters.location.toLowerCase().trim()));
   
 
-    // Combine all filters
-    // return typeMatch && ageMatch && genderMatch && dateMatch;
     console.log("Pet Location:", pet.location, "Filter Location:", filters.location);
     return typeMatch && genderMatch && dateMatch && locationMatch;
   });
@@ -120,14 +109,25 @@ const Lost = () => {
             <p style={{ marginTop: "20px" }}>How Does the Lost Section Work?</p>
             <div className={styles.info_list}>
               <div className={styles.step}>
-                <div></div>
-                <div></div>
-                <div></div>
+                  <img src={question} alt="" className={styles.img_step}></img>
+                  <p className={styles.i1}>1. Search the List</p>
+                  <p className={styles.i2}>Browse through the list of found animals to check if your pet has been reported.</p>
+              </div>
+              <div className={styles.arrow}>
+                <img src={arrow} alt=""></img>
+              </div>
+              <div className={styles.step}>
+                <img src={report} alt="" className={styles.img_step}></img>
+                <p className={styles.i1}>2. Submit a Report</p>
+                <p className={styles.i2}>If your pet isn’t listed, create a lost pet report with details and a photo.</p>
               </div>
               <div className={styles.arrow}></div>
-              <div className={styles.step}></div>
-              <div className={styles.arrow}></div>
-              <div className={styles.step}></div>
+                <img src={arrow} alt=""></img>
+              <div className={styles.step}>
+                  <img src={reunite} alt="" className={styles.img_step}></img>
+                  <p className={styles.i1}>3. Reunite with Your Pet</p>
+                  <p className={styles.i2}>Once there’s a match, our team will help you reconnect with your beloved pet.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -159,7 +159,7 @@ const Lost = () => {
               {currentPets.length > 0 ? (
                 currentPets.map((pet, index) => (
                   <Card
-                    img="https://via.placeholder.com/150"
+                    img={pet.img}
                     key={pet.id}
                     name={pet.name}
                     petType={pet.petType}

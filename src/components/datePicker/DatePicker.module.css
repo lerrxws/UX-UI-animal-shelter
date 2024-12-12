@@ -3,17 +3,35 @@
     --field-background: #fff;
     --field-text-color: #000;
     --border-color: #ccc;
-    --focus-ring-color: #007bff;
+    --focus-ring-color: #675bc8;
     --highlight-background: #f0f0f0;
-    --highlight-foreground: #007bff;
+    --highlight-foreground: #675bc8;
     --trigger-width: 300px;
   }
 
 /* General styling for the date picker component */
-.datePicker {
+.datePicker.noText {
+    font-family: 'Arial', sans-serif;
+    color: var(--border-color);
+    width: 100%;
+  }
+
+  .datePicker.hasText {
     font-family: 'Arial', sans-serif;
     color: var(--text-color);
     width: 100%;
+  }
+
+  .datePicker:focus{
+    color: #675bc8;
+  }
+  
+  .dateSegment.noText {
+    color: var(--border-color); /* Gray for empty segments */
+  }
+  
+  .dateSegment.hasText {
+    color: var(--text-color); /* Black for entered text */
   }
   
   @media (max-width: 880px) {
@@ -41,6 +59,7 @@
     box-sizing: border-box;
     position: relative;
   }
+
   
   /* Icon inside the input */
   .icon {

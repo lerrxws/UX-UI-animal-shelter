@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   ComboBox,
@@ -10,53 +10,53 @@ import {
 } from "react-aria-components";
 
 import styles from "./LocationPicker.module.css";
+import { pets } from "../../constants/index";
 
-const LocationPicker = ({ onChange }) => {
-  // Local state to track the selected location
+const LocationPicker = (props) => {
   const [selectedLocation, setSelectedLocation] = useState("");
 
+  const uniqueLocations = [...new Set(pets.map((pet) => pet.location))];
+
   const handleSelect = (location) => {
-    setSelectedLocation(location); // Update local state
-    if (onChange) {
-      onChange(location); // Notify parent of the change
+    if (location) {
+      setSelectedLocation(location);
+      // console.log("Selected Location:", location);
+      if (props.onChange) {
+        props.onChange(location);
+      }
     }
   };
+
+  useEffect(() => {
+    setSelectedLocation("");
+  }, [props.resetKey]);
 
   return (
     <div className={styles.container}>
       <ComboBox
         className={styles.reactAriaComboBox}
         selectedKey={selectedLocation}
-        onSelectionChange={handleSelect} // Handle location selection
+        onSelectionChange={handleSelect}
       >
-        <Label className={styles.label}>Location</Label>
+        <Label className={styles.label}>{props.label}</Label>
         <div className={styles.inputWrapper}>
-          <Input className={styles.reactAriaInput} />
+          <Input
+            className={styles.reactAriaInput}
+            placeholder="Select a location"
+          />
           <Button className={styles.reactAriaButton}>▼</Button>
         </div>
         <Popover className={styles.reactAriaPopover}>
           <ListBox className={styles.reactAriaListBox}>
-            <ListBoxItem
-              className={styles.reactAriaListBoxItem}
-              key="New York"
-            >
-              New York
-            </ListBoxItem>
-            <ListBoxItem
-              className={styles.reactAriaListBoxItem}
-              key="Los Angeles"
-            >
-              Los Angeles
-            </ListBoxItem>
-            <ListBoxItem className={styles.reactAriaListBoxItem} key="Chicago">
-              Chicago
-            </ListBoxItem>
-            <ListBoxItem className={styles.reactAriaListBoxItem} key="Houston">
-              Houston
-            </ListBoxItem>
-            <ListBoxItem className={styles.reactAriaListBoxItem} key="Miami">
-              Miami
-            </ListBoxItem>
+            {uniqueLocations.map((location) => (
+              <ListBoxItem
+                key={location}
+                textValue={location}
+                className={styles.reactAriaListBoxItem}
+              >
+                {location}
+              </ListBoxItem>
+            ))}
           </ListBox>
         </Popover>
       </ComboBox>
