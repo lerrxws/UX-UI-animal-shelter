@@ -6,6 +6,7 @@ import Lost from './pages/lost/Lost'
 import Landing from './pages/landing/Landing'
 import LostFound from './pages/lostfound/LostFound'
 import { Routes, Route } from "react-router-dom";
+import Profile from './pages/profile/Profile';
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
         <Route path="/lost&found" element={<LostFound />} />
         <Route path="/lost" element={<Lost />} />
         <Route path="/report" element={<Report />} />
+        <Route path="/profile/:id" element={<Profile />} />
+
       </Routes>
     </div>
   );

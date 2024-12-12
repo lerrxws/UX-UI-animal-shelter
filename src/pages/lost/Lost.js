@@ -9,18 +9,18 @@ import Pagination from "@mui/material/Pagination";
 import Card from "../../components/card/Card";
 import Button from "../../components/button/Button";
 import { pets } from "../../constants/index";
-import { useNavigate } from 'react-router-dom';
-import question from "../../assets/question-dark.png"
-import report from "../../assets/report.png"
-import reunite from "../../assets/reunite.png"
-import arrow from "../../assets/next-step.png"
+import { useNavigate } from "react-router-dom";
+import question from "../../assets/question-dark.png";
+import report from "../../assets/report.png";
+import reunite from "../../assets/reunite.png";
+import arrow from "../../assets/next-step.png";
 
 const Lost = () => {
   const [filters, setFilters] = useState({
     petType: "all",
     gender: "all",
     lostDate: null,
-    location: ""
+    location: "",
   });
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -29,28 +29,25 @@ const Lost = () => {
   const itemsPerPage = rowsPerPage * cardsPerRow;
 
   const filteredPets = pets.filter((pet) => {
-
-    const typeMatch = filters.petType === 'all' || 
+    const typeMatch =
+      filters.petType === "all" ||
       pet.petType.toLowerCase() === filters.petType.toLowerCase();
 
-    const genderMatch = !filters.gender || 
-    filters.gender.toLowerCase() === 'all' || 
-    pet.gender.toLowerCase() === filters.gender.toLowerCase();
+    const genderMatch =
+      !filters.gender ||
+      filters.gender.toLowerCase() === "all" ||
+      pet.gender.toLowerCase() === filters.gender.toLowerCase();
 
-    const dateMatch = !filters.lostDate || 
-      (new Date(pet.lostDate) >= new Date(filters.lostDate));
+    const dateMatch =
+      !filters.lostDate ||
+      new Date(pet.lostDate) >= new Date(filters.lostDate);
 
-    const locationMatch = !filters.location || 
-    (pet.location?.toLowerCase().trim().includes(filters.location.toLowerCase().trim()));
-  
+    const locationMatch =
+      !filters.location ||
+      pet.location?.toLowerCase().trim().includes(filters.location.toLowerCase().trim());
 
-    // console.log("Pet Location:", pet.location, "Filter Location:", filters.location);
     return typeMatch && genderMatch && dateMatch && locationMatch;
   });
-
-  useEffect(() => {
-    console.log("Filters Updated:", filters);
-  }, [filters]);
 
   useEffect(() => {
     const calculateCardsPerRow = () => {
@@ -89,44 +86,54 @@ const Lost = () => {
   };
 
   const pages = [
-    { label: 'Home', url: '/' },
-    { label: 'Lost & Found', url: '/lost&found' },
-    { label: 'Lost', url: '/lost' },
+    { label: "Home", url: "/" },
+    { label: "Lost & Found", url: "/lost&found" },
+    { label: "Lost", url: "/lost" },
   ];
 
   return (
     <div className={styles.lost}>
       <Header />
-      <BasicBreadcrumbs pages={pages}/>
+      <BasicBreadcrumbs pages={pages} />
       <hr className="solid" />
       <div className={styles.lost__container}>
         <div className={styles.info_banner}>
-          <p style={{ marginTop: "20px", marginBottom: "20px" }} className="">
+          <p style={{ marginTop: "20px", marginBottom: "20px" }}>
             Lost a Pet? Let Us Help You Find Them!
           </p>
           <hr className="solid" />
           <div className={styles.how_works}>
-            <p style={{ marginTop: "20px" }}>How Does the Lost Section Work?</p>
+            <p className={styles.p}>How Does the Lost Section Work?</p>
             <div className={styles.info_list}>
               <div className={styles.step}>
-                  <img src={question} alt="" className={styles.img_step}></img>
-                  <p className={styles.i1}>1. Search the List</p>
-                  <p className={styles.i2}>Browse through the list of found animals to check if your pet has been reported.</p>
+                <img src={question} alt="" className={styles.img_step} />
+                <p className={styles.i1}>1. Search the List</p>
+                <p className={styles.i2}>
+                  Browse through the list of found animals to check if your pet
+                  has been reported.
+                </p>
               </div>
               <div className={styles.arrow}>
-                <img src={arrow} alt=""></img>
+                <img src={arrow} alt="" />
               </div>
               <div className={styles.step}>
-                <img src={report} alt="" className={styles.img_step}></img>
+                <img src={report} alt="" className={styles.img_step} />
                 <p className={styles.i1}>2. Submit a Report</p>
-                <p className={styles.i2}>If your pet isn’t listed, create a lost pet report with details and a photo.</p>
+                <p className={styles.i2}>
+                  If your pet isn’t listed, create a lost pet report with
+                  details and a photo.
+                </p>
               </div>
-              <div className={styles.arrow}></div>
-                <img src={arrow} alt=""></img>
+              <div className={styles.arrow}>
+                <img src={arrow} alt="" />
+              </div>
               <div className={styles.step}>
-                  <img src={reunite} alt="" className={styles.img_step}></img>
-                  <p className={styles.i1}>3. Reunite with Your Pet</p>
-                  <p className={styles.i2}>Once there’s a match, our team will help you reconnect with your beloved pet.</p>
+                <img src={reunite} alt="" className={styles.img_step} />
+                <p className={styles.i1}>3. Reunite with Your Pet</p>
+                <p className={styles.i2}>
+                  Once there’s a match, our team will help you reconnect with
+                  your beloved pet.
+                </p>
               </div>
             </div>
           </div>
@@ -143,24 +150,28 @@ const Lost = () => {
                 Please fill out the form to help us assist you in finding your
                 lost pet
               </p>
-              <Button variant="secondary" onClick={() => handleNavigation('/report')}>Report</Button>
+              <Button
+                variant="secondary"
+                onClick={() => handleNavigation("/report")}
+              >
+                Report
+              </Button>
             </div>
           </div>
         </div>
-        <div>
-          <hr className="solid" />
-        </div>
+        <hr className="solid" />
         <div className={styles.pet_list}>
           <div className={styles.filter}>
             <FilterLost filters={filters} setFilters={setFilters} />
           </div>
           <div className={styles.pets}>
-            <div className={styles.pet_container}>
-              {currentPets.length > 0 ? (
-                currentPets.map((pet, index) => (
+            {currentPets.length > 0 ? (
+              <div className={styles.pet_container}>
+                {currentPets.map((pet) => (
                   <Card
                     img={pet.img}
                     key={pet.id}
+                    id={pet.id}
                     name={pet.name}
                     petType={pet.petType}
                     gender={pet.gender}
@@ -168,37 +179,33 @@ const Lost = () => {
                     location={pet.location}
                     age={pet.age}
                   />
-                ))
-              ) : (
-                <div className={styles.no_results}>
-                  No pets found matching your filters.
-                </div>
-              )}
-            </div>
-            <div className={styles.pagination}>
-              {totalPages > 1 && (
+                ))}
+              </div>
+            ) : (
+              <div className={styles.no_results}>
+                No pets found matching your filters.
+              </div>
+            )}
+            {totalPages > 1 && (
+              <div className={styles.pagination}>
                 <Pagination
-                count={totalPages}
-                page={currentPage}
-                onChange={handlePageChange}
-                shape="rounded"
-                color="primary"
-                sx={{
-                  '& .MuiPaginationItem-root': {
-                    color: '#675bc8',
-                    '&.Mui-selected': {
-                      backgroundColor: '#675bc8',
-                      color: 'white'
+                  count={totalPages}
+                  page={currentPage}
+                  onChange={handlePageChange}
+                  shape="rounded"
+                  color="primary"
+                  sx={{
+                    "& .MuiPaginationItem-root": {
+                      color: "#675bc8",
+                      "&.Mui-selected": {
+                        backgroundColor: "#675bc8",
+                        color: "white",
+                      },
                     },
-                    // '&:hover': {
-                    //   backgroundColor: '#675bc8',
-                    //   opacity: 0.8
-                    // }
-                  }
-                }}
-              />
-              )}
-            </div>
+                  }}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

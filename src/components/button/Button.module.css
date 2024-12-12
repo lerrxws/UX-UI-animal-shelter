@@ -78,6 +78,24 @@
     }
 }
 
+@media (max-width: 600px) {
+
+    .button{
+        font-size: 16px;
+        width: fit-content;
+        min-width: 100px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* .button{
+        font-size: 8px;
+        padding: 0px
+    } */
+}
+
 .button_secondary {
     color: var(--white);
     border: 1px solid var(--base_purple);

@@ -82,6 +82,16 @@
     color: var(--white);
 }
 
+@media (max-width: 600px) {
+    .info_banner{
+        font-size: 32px;
+    }
+    .p{
+        font-size: 24px;
+    }
+}
+
+
 .how_works {
     font-size: 32px;
 }
@@ -118,6 +128,15 @@
     font-weight: var(--font-normal);
 }
 
+@media (max-width: 600px) {
+    .img_step{
+        max-width: 120px;
+    }
+    .step{
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 1200px) {
     .arrow { display: none;}
     .info_list { flex-direction: column;}
@@ -136,6 +155,7 @@
     transition: 0.3s ease padding;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     flex:1;
@@ -166,6 +186,21 @@
     font-weight: var(--font-normal);
     width: 80%;
     margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .report__container{
+        font-size: 32px;
+    }
+    .p1{
+        font-size: 24px;
+    }
+    .p2{
+        font-size: 12px;
+    }
+    .image{
+        width: 120px;
+    }
 }
 
 .pet_list{
@@ -201,6 +236,7 @@
     /* border: 1px solid #868686; */
     border-radius: 8px;
     gap: 16  px;
+    min-height: 400px;
 }
 
 .pet_row {
@@ -297,6 +333,12 @@
     }
   }
 
-
+  .no_results{
+    color: var(--Gray1);
+    font-size: 16px;
+    font-weight: var(--font-normal);
+    text-align: center;
+    /* align-self: center; */
+  }
 
   

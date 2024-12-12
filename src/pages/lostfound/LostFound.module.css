@@ -64,7 +64,7 @@
 }
 
 .lost_found__container {
-    font-size: 72px;
+    font-size: 64px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
     transition: 0.3s ease padding;
@@ -93,4 +93,48 @@
     flex-wrap: wrap;
     font-size: 16px;
     gap: 16px;
+}
+
+@media (max-width: 800px) {
+
+    .lost_found__container{
+        font-size: 48px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .lost_found__container{
+        font-size: 32px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+    }
+    .main_content{
+        padding: 4px;
+    }
+}
+
+@media (max-width: 300px) {
+
+    .lost_found__container{
+        font-size: 24px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+    }
+    .button__container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: var(--spacing-lg);
+        /* flex-wrap: wrap; */
+        font-size: 8px;
+        gap: 0px;
+    }
 }

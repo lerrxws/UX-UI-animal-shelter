@@ -196,7 +196,12 @@ return (
                 borderRadius: "5px",
                 color: "white"
               }}
-              onClick={() => setIsFilterOpen(!isFilterOpen)}
+              onClick={() => {setIsFilterOpen(!isFilterOpen);
+                              setIsDateOpen(false);
+                              setIsGenderOpen(false);
+                              setIsLocationOpen(false);
+                              setIsPetTypeOpen(false);
+              }}
             >
               {isFilterOpen ? <p>Close</p> : <p>Open</p>}
             </div>

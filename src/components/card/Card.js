@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Card.module.css';
 import Button from '../button/Button';
+import { Link } from 'react-router-dom';
 
 function Card(props) {
   return (
@@ -25,7 +26,11 @@ function Card(props) {
           </div>
         </div>
       </div>
-      <Button>More Info</Button>
+      <Link to={`/profile/${props.id}`}>
+        <Button>
+        More Info
+        </Button>
+      </Link>
     </div>
   );
 }
