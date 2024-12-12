@@ -1,7 +1,7 @@
 .info{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap-reverse;
+    /* flex-wrap: wrap-reverse; */
     align-items: top;
     gap: 64px;
     height: fit-content;
@@ -28,7 +28,7 @@
 @media (max-width: 642px) {
 
     .drag_drop_container{
-        width: 100%;
+        width: 70%;
     }
 }
 
@@ -36,13 +36,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 40%;
+    width: 50%;
 }
 
 @media (max-width: 642px) {
 
     .fields_container{
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -51,11 +51,20 @@
     display: flex;
     flex-direction: row;
     align-items: end;
-    gap: 8px;
+    justify-content: space-between;
+    /* gap: 8px; */
+}
+
+@media (max-width: 440px) {
+
+    .sex_gender_age{
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+    }
 }
 
 .dropdown_container{
-    width: 40%;
+    width: 30%;
 }
 
 .age_container{

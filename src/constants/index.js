@@ -294,6 +294,6 @@ export const pets = [
 export const petOptions = [
   { value: 'dog', label: 'Dog' },
   { value: 'cat', label: 'Cat' },
-  { value: 'bird', label: 'Bird' },
   { value: 'other', label: 'Other' },
 ];
+

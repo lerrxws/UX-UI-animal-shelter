@@ -1,35 +1,32 @@
 import React, { useState, useEffect } from "react";
-import {
-  Button,
-  ComboBox,
-  Input,
-  Label,
-  ListBox,
-  ListBoxItem,
-  Popover,
-} from "react-aria-components";
-
+import {   
+  Button,   
+  ComboBox,   
+  Input,   
+  Label,   
+  ListBox,   
+  ListBoxItem,   
+  Popover, 
+} from "react-aria-components";  
 import styles from "./LocationPicker.module.css";
-import { pets } from "../../constants/index";
+import { pets } from "../../constants/index";  
 
-const LocationPicker = (props) => {
-  const [selectedLocation, setSelectedLocation] = useState("");
+const LocationPicker = (props) => {   
+  const [selectedLocation, setSelectedLocation] = useState("");    
+  const uniqueLocations = [...new Set(pets.map((pet) => pet.location))];    
 
-  const uniqueLocations = [...new Set(pets.map((pet) => pet.location))];
-
-  const handleSelect = (location) => {
-    if (location) {
-      setSelectedLocation(location);
-      // console.log("Selected Location:", location);
+  const handleSelect = (key) => {
+    if (key) {
+      setSelectedLocation(key);
       if (props.onChange) {
-        props.onChange(location);
+        props.onChange(key);
       }
     }
-  };
+  };    
 
   useEffect(() => {
-    setSelectedLocation("");
-  }, [props.resetKey]);
+    setSelectedLocation("");   
+  }, [props.resetKey]);    
 
   return (
     <div className={styles.container}>
@@ -51,7 +48,7 @@ const LocationPicker = (props) => {
             {uniqueLocations.map((location) => (
               <ListBoxItem
                 key={location}
-                textValue={location}
+                id={location}   
                 className={styles.reactAriaListBoxItem}
               >
                 {location}
@@ -62,6 +59,6 @@ const LocationPicker = (props) => {
       </ComboBox>
     </div>
   );
-};
+};  
 
 export default LocationPicker;

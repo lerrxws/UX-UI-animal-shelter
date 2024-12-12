@@ -34,8 +34,11 @@ const Description = (props) => {
                         
                         <div className={styles.dropdown_container}>
                             <Dropdown
-                                label="Pet Type"
-                                options={props.petOptions}
+                                label="Gender"
+                                options={[
+                                    { value: 'male', label: 'Male' },
+                                    { value: 'female', label: 'Female' },
+                                  ]}
                                 value={props.petType}
                                 onChange={(e) => props.setPetType(e.target.value)}
                                 name="petType"

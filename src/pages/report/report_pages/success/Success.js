@@ -8,7 +8,7 @@ import submit from '../../../../assets/submitting.png';
 const Success = (props) => {
     return (
         <div className={report.body}>
-                    <p className={report.annotation}>When did your pet go missing?</p>
+                    <p className={report.annotation}>Thanks For Submitting</p>
                     <div className={styles.submit}>
                         <p>We got your request! Our team will review it and reach out soon.</p>
                         <img className= {styles.img} src={submit} alt=''></img>

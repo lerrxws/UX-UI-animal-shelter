@@ -34,7 +34,7 @@ const StyledWrapper = styled.div`
   }
   .file-upload-label svg {
     height: 50px;
-    fill: rgb(82, 82, 82);
+    fill: #675bc8;
     margin-bottom: 20px;
   }
   .file-upload-label {
@@ -53,7 +53,7 @@ const StyledWrapper = styled.div`
     gap: 5px;
   }
   .browse-button {
-    background-color: rgb(82, 82, 82);
+    background-color: #675bc8;
     padding: 5px 15px;
     border-radius: 10px;
     color: white;

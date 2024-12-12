@@ -44,7 +44,7 @@ const Lost = () => {
     (pet.location?.toLowerCase().trim().includes(filters.location.toLowerCase().trim()));
   
 
-    console.log("Pet Location:", pet.location, "Filter Location:", filters.location);
+    // console.log("Pet Location:", pet.location, "Filter Location:", filters.location);
     return typeMatch && genderMatch && dateMatch && locationMatch;
   });
 
@@ -178,12 +178,25 @@ const Lost = () => {
             <div className={styles.pagination}>
               {totalPages > 1 && (
                 <Pagination
-                  count={totalPages}
-                  page={currentPage}
-                  onChange={handlePageChange}
-                  shape="rounded"
-                  color="primary"
-                />
+                count={totalPages}
+                page={currentPage}
+                onChange={handlePageChange}
+                shape="rounded"
+                color="primary"
+                sx={{
+                  '& .MuiPaginationItem-root': {
+                    color: '#675bc8',
+                    '&.Mui-selected': {
+                      backgroundColor: '#675bc8',
+                      color: 'white'
+                    },
+                    // '&:hover': {
+                    //   backgroundColor: '#675bc8',
+                    //   opacity: 0.8
+                    // }
+                  }
+                }}
+              />
               )}
             </div>
           </div>
