@@ -188,7 +188,16 @@ export const pets = [
     img: pet_01,
     gender: "Female",
     lostDate: "2024-12-01",
-    location: "Downtown Park, NY",
+    location: "Hlavná ulica, Košice", // Unique location
+    chipNumber: 'KO-CAT-001',
+    note: 'White cat with blue eyes, wearing a pink collar',
+    phoneNumber: '(+421)905-123-456',
+    email: 'luna.finder@example.com',
+    images: [
+      pet_01,
+      pet_01,
+      pet_01
+    ],
   },
   {
     id: "2",
@@ -197,7 +206,15 @@ export const pets = [
     img: pet_02,
     gender: "Male",
     lostDate: "2024-11-28",
-    location: "Central Park, NY",
+    location: "Mlynská ulica, Košice", // Unique location
+    chipNumber: 'KO-DOG-002',
+    note: 'Golden retriever, friendly and well-groomed',
+    phoneNumber: '(+421)905-987-654',
+    email: 'buddy.finder@example.com',
+    images: [
+      pet_02,
+      pet_02
+    ],
   },
   {
     id: "3",
@@ -206,7 +223,14 @@ export const pets = [
     img: pet_03,
     gender: "Female",
     lostDate: "2024-12-05",
-    location: "East Side, Chicago",
+    location: "Trieda KVP, Košice", // Unique location
+    chipNumber: 'KO-CAT-003',
+    note: 'Gray tabby cat, slightly overweight',
+    phoneNumber: '(+421)905-246-810',
+    email: 'vratnicka.finder@example.com',
+    images: [
+      pet_03,
+    ],
   },
   {
     id: "4",
@@ -215,7 +239,15 @@ export const pets = [
     img: pet_04,
     gender: "Male",
     lostDate: "2024-11-15",
-    location: "Sunset Boulevard, LA",
+    location: "Hlavná ulica, Košice", // Same location as Luna
+    chipNumber: 'Not Available',
+    note: 'Black and white border collie, very energetic',
+    phoneNumber: 'Not Available',
+    email: 'max.finder@example.com',
+    images: [
+      pet_04,
+      pet_04
+    ],
   },
   {
     id: "5",
@@ -224,7 +256,16 @@ export const pets = [
     img: pet_05,
     gender: "Female",
     lostDate: "2024-12-07",
-    location: "North Beach, Miami",
+    location: "Hlavná ulica, Košice", // Same location as Luna and Max
+    chipNumber: 'KO-DOG-005',
+    note: 'Small white poodle with a pink bow',
+    phoneNumber: '(+421)905-024-681',
+    email: 'Not Available',
+    images: [
+      pet_05,
+      pet_05,
+      pet_05
+    ],
   },
   {
     id: "6",
@@ -233,7 +274,16 @@ export const pets = [
     img: pet_06,
     gender: "Male",
     lostDate: "2024-12-10",
-    location: "Broadway, NY",
+    location: "Námestie Maratónu mieru, Košice", // Unique location
+    chipNumber: 'KO-CAT-006',
+    note: 'Ginger tabby cat, very sociable',
+    phoneNumber: '(+421)905-369-258',
+    email: 'oliver.finder@example.com',
+    images: [
+      pet_06,
+      pet_06,
+      pet_06
+    ],
   },
   {
     id: "7",
@@ -242,7 +292,14 @@ export const pets = [
     img: pet_07,
     gender: "Female",
     lostDate: "2024-11-01",
-    location: "Golden Gate Park, SF",
+    location: "Mlynská ulica, Košice", // Same location as Buddy
+    chipNumber: 'KO-DOG-007',
+    note: 'German shepherd, well-trained',
+    phoneNumber: '(+421)905-147-258',
+    email: 'bella.finder@example.com',
+    images: [
+      pet_07,
+    ],
   },
   {
     id: "8",
@@ -251,7 +308,15 @@ export const pets = [
     img: pet_08,
     gender: "Female",
     lostDate: "2024-12-03",
-    location: "Fisherman's Wharf, SF",
+    location: "Trieda KVP, Košice", // Same location as Vratnicka
+    chipNumber: 'KO-CAT-008',
+    note: 'Siamese cat with striking blue eyes',
+    phoneNumber: 'Not Available',
+    email: 'cleo.finder@example.com',
+    images: [
+      pet_08,
+      pet_08
+    ],
   },
   {
     id: "9",
@@ -260,7 +325,15 @@ export const pets = [
     img: pet_09,
     gender: "Male",
     lostDate: "2024-11-22",
-    location: "Times Square, NY",
+    location: "Trieda KVP, Košice", // Same location as Vratnicka and Cleo
+    chipNumber: 'KO-DOG-009',
+    note: 'Muscular pit bull, very friendly',
+    phoneNumber: '(+421)905-258-741',
+    email: 'rocky.finder@example.com',
+    images: [
+      pet_09,
+      pet_09
+    ],
   },
   {
     id: "10",
@@ -269,7 +342,25 @@ export const pets = [
     img: pet_10,
     gender: "Male",
     lostDate: "2024-11-30",
-    location: "Highland Park, TX",
+    location: "Námestie Maratónu mieru, Košice", // Same location as Oliver
+    chipNumber: 'KO-CAT-010',
+    note: 'Black and white tuxedo cat',
+    phoneNumber: 'Not Available',
+    email: 'whiskers.finder@example.com',
+    images: [
+      pet_10,
+      pet_10,
+      pet_10
+    ],
+    reportData: {
+      foundDate: '30/11/2024',
+      foundNear: 'Trieda SNP, Košice',
+      chipNumber: 'KO-CAT-010',
+      gender: 'Male',
+      note: 'Black and white tuxedo cat',
+      phoneNumber: '(+421)905-036-987',
+      email: 'whiskers.finder@example.com'
+    }
   },
   {
     id: "11",
@@ -278,7 +369,23 @@ export const pets = [
     img: pet_11,
     gender: "Male",
     lostDate: "2024-12-06",
-    location: "Magnolia Avenue, Houston",
+    location: "Mlynská ulica, Košice", // Same location as Buddy and Bella
+    chipNumber: 'KO-DOG-011',
+    note: 'Labrador mix, loves playing fetch',
+    phoneNumber: 'Not Available',
+    email: 'charlie.finder@example.com',
+    images: [
+      pet_11,
+    ],
+    reportData: {
+      foundDate: '06/12/2024',
+      foundNear: 'Námestie osloboditeľov, Košice',
+      chipNumber: 'KO-DOG-011',
+      gender: 'Male',
+      note: 'Labrador mix, loves playing fetch',
+      phoneNumber: '(+421)905-159-753',
+      email: 'charlie.finder@example.com'
+    }
   },
   {
     id: "12",
@@ -287,9 +394,20 @@ export const pets = [
     img: pet_12,
     gender: "Female",
     lostDate: "2024-12-08",
-    location: "Pier 39, SF",
-  },
+    location: "Špitálska ulica, Košice", // Unique location
+    chipNumber: 'Not Available',
+    note: 'Solid black cat with green eyes',
+    phoneNumber: '(+421)905-963-852',
+    email: 'Not Available',
+    images: [
+      pet_12,
+      pet_12,
+      pet_12
+    ],
+  }
 ];
+
+
 
 export const petOptions = [
   { value: 'dog', label: 'Dog' },

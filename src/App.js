@@ -28,7 +28,6 @@ function App() {
         <Route path="/lost" element={<Lost />} />
         <Route path="/report" element={<Report />} />
         <Route path="/profile/:id" element={<Profile />} />
-
       </Routes>
     </div>
   );
