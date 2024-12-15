@@ -17,7 +17,7 @@ function Card(props) {
             <p className={styles.prop}>{props.gender}</p>
           </div>
           <div className={styles.prop_container}>
-            <p className={styles.text}>Lost: </p>
+            <p className={styles.text}>Found: </p>
             <p className={styles.prop}>{props.lostDate}</p>
           </div>
           <div className={styles.prop_container}>
